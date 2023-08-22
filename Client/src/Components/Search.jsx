@@ -17,9 +17,9 @@ const Search = () => {
       Navigate(`/Airline/${ticketId}`);
     };
   return (
-    <section id="Hero" className="flex justify-center h-screen items-center bg-cover bg-no-repeat " style={{backgroundImage:'url(https://images.pexels.com/photos/3266537/pexels-photo-3266537.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)' , backgroundAttachment:'fixed'}}>
+    <section id="Hero" className="flex justify-center h-screen items-center bg-cover bg-no-repeat " style={{backgroundImage:'url(https://i.pinimg.com/originals/b9/fd/07/b9fd0706b105d23574ff54278e497442.jpg)' , backgroundAttachment:'fixed'}}>
     <div className="flex flex-wrap justify-center lg:p-16 md:p px-4 items-center gap-2 ">
-      <div className="w-fit bg-[#0f0f0f19] p-5 rounded-xl pb-16">
+      <div className="w-fit bg-base-200 bg-opacity-75 p-5 rounded-xl pb-16">
       <Icon path={mdiBagSuitcase} size={2} data-aos="zoom-in-down"  color={'#102C57'} data-aos-duration="3000"/>
 
         <h1 className="max-w-2xl mb-4 text-4xl text-center font-extrabold text-[#102C57] tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">

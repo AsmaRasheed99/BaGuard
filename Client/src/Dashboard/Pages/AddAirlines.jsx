@@ -14,7 +14,7 @@ const AddAirlines = () => {
   e.preventDefault();
         
   try {
-     const Airline = await axios.post(`${ApiUrl}/AddAirline`, {Email : Email , Password : Password})
+     const Airline = await axios.post(`${ApiUrl}/AddAirline`, {Email : Email , Password : Password,role:"Airline"})
      console.log(Airline.data)
   } catch (error) {
     console.error (error.message)

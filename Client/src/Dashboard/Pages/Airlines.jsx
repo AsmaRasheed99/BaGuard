@@ -1,5 +1,5 @@
 import Icon from "@mdi/react";
-import { mdiDelete } from "@mdi/js";
+import { mdiAirplane, mdiDelete } from "@mdi/js";
 import { mdiFileEdit } from "@mdi/js";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -10,8 +10,21 @@ import { mdiShieldCrownOutline } from "@mdi/js";
 import { mdiAccountOutline } from "@mdi/js";
 
 const Airlines = () => {
+  const ApiUrl = import.meta.env.VITE_REACT_APP_API_URL;
 
+  const [AllAirLines, setAllAirLines] = useState([]);
 
+  const getAllAirLines = async () => {
+    try {
+      const Airline = await axios.get(`${ApiUrl}/AllAirLines`);
+      setAllAirLines(Airline.data)
+    } catch (error) {
+      console.error(error);
+    }
+  };
+useEffect(()=>{
+  getAllAirLines();
+},[])
 
 
   return (
@@ -29,6 +42,7 @@ const Airlines = () => {
           <table role="table" className="w-full">
             <thead>
               <tr role="row">
+              
                 <th
                   colSpan={1}
                   role="columnheader"
@@ -36,16 +50,7 @@ const Airlines = () => {
                   className="border-b border-gray-200 pr-28 pb-[10px] text-start dark:!border-navy-700"
                   style={{ cursor: "pointer" }}
                 >
-                  <p className="text-xs tracking-wide text-gray-600">NAME</p>
-                </th>
-                <th
-                  colSpan={1}
-                  role="columnheader"
-                  title="Toggle SortBy"
-                  className="border-b border-gray-200 pr-28 pb-[10px] text-start dark:!border-navy-700"
-                  style={{ cursor: "pointer" }}
-                >
-                  <p className="text-xs tracking-wide text-gray-600">email</p>
+                  <p className="text-xs tracking-wide text-gray-600">Email</p>
                 </th>
               
                 <th
@@ -55,19 +60,10 @@ const Airlines = () => {
                   className="border-b border-gray-200 pr-28 pb-[10px] text-start dark:!border-navy-700"
                   style={{ cursor: "pointer" }}
                 >
-                  <p className="text-xs tracking-wide text-gray-600">role</p>
+                  <p className="text-xs tracking-wide text-gray-600">Role</p>
                 </th>
 
-                <th
-                  colSpan={1}
-                  role="columnheader"
-                  title="Toggle SortBy"
-                  className="border-b border-gray-200 pr-10 pb-[10px] text-start dark:!border-navy-700"
-                  style={{ cursor: "pointer" }}
-                >
-                  <p className="text-xs tracking-wide text-gray-600">EDIT</p>
-                </th>
-
+             
                 <th
                   colSpan={1}
                   role="columnheader"
@@ -80,20 +76,11 @@ const Airlines = () => {
               </tr>
             </thead>
 
-            {[].map((e) => {
+            {AllAirLines?.map((e) => {
               return (
                 <tbody role="rowgroup">
                   <tr role="row">
-                  <td
-                      className="pt-[14px] pb-[18px] sm:text-[14px] flex items-center"
-                      role="cell"
-                    >
-                   
-
-                      <p className="text-sm font-bold text-navy-700 dark:text-white ml-3">
-                        {/* {e.firstName} */}
-                      </p>
-                    </td>
+                 
                     <td
                       className="pt-[14px] pb-[18px] sm:text-[14px]"
                       role="cell"
@@ -101,7 +88,7 @@ const Airlines = () => {
                       <div className="flex items-center gap-2">
                         <div className="rounded-full text-xl">
                           <p className="text-sm font-bold text-navy-700 dark:text-white">
-                            {/* {e.email} */}
+                            {e.Email}
                           </p>
                         </div>
                       </div>
@@ -112,46 +99,20 @@ const Airlines = () => {
                       role="cell"
                     >
                       <p className="text-sm font-bold text-navy-700 dark:text-white">
-                        {
-                        e.role == 0 ? (
-                          <div className=" w-10 flex flex-col justify-center items-center">
-                            {" "}
-                            <Icon path={mdiAccountOutline} size={1} />{" "}
-                            <span>user</span>{" "}
-                          </div>
-                        ) : e.role == 1 ? (
-                          <div className=" w-10 flex flex-col justify-center items-center">
-                            {" "}
-                            <Icon path={mdiShieldCrownOutline} size={1} />{" "}
-                            <span>Admin</span>{" "}
-                          </div>
-                        ) : (
+                       
 
                           <div className=" w-10 flex flex-col justify-center items-center">
                           {" "}
-                          <Icon  path={mdiSilverware} size={1} />
+                          <Icon  path={mdiAirplane} size={1} />
                           {" "}
-                          <span>Provider</span>{" "}
+                          <span>Airline</span>{" "}
                         </div>
 
-                        )
-                      }
 
                       </p>
                     </td>
 
-                    <td
-                      className="pt-[14px] pb-[18px] sm:text-[14px]"
-                      role="cell"
-                    >
-                      <button
-                        onClick={() => handleUpdate(e._id, e.role, e.firstName)}
-                      >
-                       
-                          <Icon color="blue" path={mdiHumanEdit} size={1} />
-                       
-                      </button>
-                    </td>
+                
 
                     <td
                       className="pt-[14px] pb-[18px] sm:text-[14px]"

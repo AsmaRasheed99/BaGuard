@@ -17,7 +17,7 @@ const Statistics = () => {
 
   return (
     <div className="mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-6 p-10">
-      <div className="!z-5 relative flex bg-[#00acc1] bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px]">
+      <div className="!z-5 relative flex bg-blue-300 bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px]">
         <div className="ml-[18px] flex h-[90px] w-auto flex-row items-center">
 
           <div className="rounded-full bg-[#f4f7fe] p-3 dark:bg-navy-700 ">
@@ -33,7 +33,7 @@ const Statistics = () => {
           </h4>
         </div>
       </div>
-      <div className="!z-5 relative flex  bg-[#00acc1] bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px] ">
+      <div className="!z-5 relative flex  bg-blue-300 bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px] ">
         <div className="ml-[18px] flex h-[90px] w-auto flex-row items-center">
           <div className="rounded-full bg-[#f4f7fe] p-3 dark:bg-navy-700">
             <span className="flex items-center text-brand-500 dark:text-white">
@@ -51,7 +51,7 @@ const Statistics = () => {
           </h4>
         </div>
       </div>
-      <div className="!z-5 relative flex  bg-[#00acc1] bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px] ">
+      <div className="!z-5 relative flex  bg-blue-300 bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px] ">
         <div className="ml-[18px] flex h-[90px] w-auto flex-row items-center">
           <div className="rounded-full bg-[#f4f7fe] p-3 dark:bg-navy-700">
             <span className="flex items-center text-brand-500 dark:text-white">
@@ -68,7 +68,7 @@ const Statistics = () => {
           </h4>
         </div>
       </div>
-      <div className="!z-5 relative flex bg-[#00acc1] bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px] ">
+      <div className="!z-5 relative flex bg-blue-300 bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px] ">
         <div className="ml-[18px] flex h-[90px] w-auto flex-row items-center">
           <div className="rounded-full bg-[#f4f7fe] p-3 dark:bg-navy-700">
             <span className="flex items-center text-brand-500 dark:text-white">
@@ -84,7 +84,7 @@ const Statistics = () => {
           </h4>
         </div>
       </div>
-      <div className="!z-5 relative flex bg-[#00acc1] bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px] ">
+      <div className="!z-5 relative flex bg-blue-300 bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px] ">
         <div className="ml-[18px] flex h-[90px] w-auto flex-row items-center">
           <div className="rounded-full bg-[#f4f7fe] p-3 dark:bg-navy-700">
             <span className="flex items-center text-brand-500 dark:text-white">
@@ -100,7 +100,7 @@ const Statistics = () => {
           </h4>
         </div>
       </div>
-      <div className="!z-5 relative flex  bg-[#00acc1] bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px] ">
+      <div className="!z-5 relative flex  bg-blue-300 bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none !flex-row flex-grow items-center rounded-[20px] ">
         <div className="ml-[18px] flex h-[90px] w-auto flex-row items-center">
           <div className="rounded-full bg-[#f4f7fe] p-3 dark:bg-navy-700">
             <span className="flex items-center text-brand-500 dark:text-white">

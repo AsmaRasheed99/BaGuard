@@ -1,8 +1,9 @@
 import Icon from '@mdi/react';
 import {  mdiAirplane, mdiAirplanePlus, mdiBriefcaseEdit, mdiEmail, mdiFileEdit, mdiHandshake, mdiPlus, mdiReload  } from '@mdi/js';
-import { mdiAccountMultipleOutline } from '@mdi/js';
 import { mdiShieldCrownOutline,mdiAlert } from '@mdi/js';
 import React from "react";
+import Logo from '../../Images/logo.png';
+
 
 import {
     Card,
@@ -22,6 +23,7 @@ import Swal from 'sweetalert2'
   export default function Sidebar() {
 
 function handleLogOut(){
+  const ReactUrl = import.meta.env.VITE_REACT_APP_API_REACT_URL;
 
     
 
@@ -42,7 +44,7 @@ function handleLogOut(){
         Swal.fire(`  done `, '', 'success');
      
         localStorage.removeItem("auth");
-        window.location.href = 'http://localhost:3000/';
+        window.location.href = ReactUrl;
       
 
     } else
@@ -54,17 +56,20 @@ function handleLogOut(){
 
 
     return (
-      <Card className=" min-h-[calc(100vh)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-white-900/5 Sidebar bg-white sideBarDash hidden lg:inline-block">
+      <Card className=" min-h-[calc(100vh)] w-full max-w-[20rem]  p-4 shadow-xl shadow-blue-white-900/5 Sidebar bg-white sideBarDash hidden lg:inline-block">
         <div className="mb-2 p-4">
-        <Typography className="text-[#000]" variant="h5" color="blue-gray">
         <Link to="/">
-            <h5>Try <span className='text-[#00ACC1] text-3xl'>A</span> Culture</h5>
+            <Typography
+              id="logo"
+              className="mr-4 cursor-pointer  font-bold text-2xl"
+            >
+    <div className='flex items-center'> <img src={Logo} className='w-12 h-14' /> <p className='pt-3 text-lg font-bold'>BaGuard</p> </div>
+            </Typography>
           </Link>
-          </Typography>
         </div>
         <List>
           <Link to='/'>
-          <ListItem className="hover:bg-[#00ACC1]">
+          <ListItem className="hover:bg-blue-300">
             <ListItemPrefix>
               <PresentationChartBarIcon className="h-5 w-5" />
             </ListItemPrefix>
@@ -74,7 +79,7 @@ function handleLogOut(){
 
 
           <Link to='/ListAdmin'>
-           <ListItem className="hover:bg-[#00ACC1]">
+           <ListItem className="hover:bg-blue-300">
             <ListItemPrefix>
             <Icon path={mdiShieldCrownOutline } size={1} />
             </ListItemPrefix>
@@ -83,7 +88,7 @@ function handleLogOut(){
           </Link>
 
            <Link to='/Airlines'>
-           <ListItem className="hover:bg-[#00ACC1]">
+           <ListItem className="hover:bg-blue-300">
             <ListItemPrefix>
             <Icon path={mdiAirplane} size={1} />
             </ListItemPrefix>
@@ -92,7 +97,7 @@ function handleLogOut(){
           </Link>
 
           <Link to='/AddAirline'>
-          <ListItem className="hover:bg-[#00ACC1]">
+          <ListItem className="hover:bg-blue-300">
             <ListItemPrefix>
             <Icon path={mdiAirplanePlus } size={1} />
             </ListItemPrefix>
@@ -100,8 +105,8 @@ function handleLogOut(){
           </ListItem>
           </Link>
 
-          <Link to='/EditAboutContact'>
-          <ListItem className="hover:bg-[#00ACC1]">
+          {/* <Link to='/EditAboutContact'>
+          <ListItem className="hover:bg-blue-300">
             <ListItemPrefix>
             <Icon path={mdiFileEdit} size={1} />
             </ListItemPrefix>
@@ -110,7 +115,7 @@ function handleLogOut(){
           </Link>
 
           <Link to='/Pending'>
-          <ListItem className="hover:bg-[#00ACC1]">
+          <ListItem className="hover:bg-blue-300">
             <ListItemPrefix>
             <Icon path={mdiReload
             } size={1} />
@@ -120,7 +125,7 @@ function handleLogOut(){
           </Link>
 
           <Link to='/AddCultures'>
-          <ListItem className="hover:bg-[#00ACC1]">
+          <ListItem className="hover:bg-blue-300">
             <ListItemPrefix>
             <Icon path={mdiPlus} size={1} />
             </ListItemPrefix>
@@ -129,7 +134,7 @@ function handleLogOut(){
           </Link>
 
           <Link to='/EditCultures'>
-          <ListItem className="hover:bg-[#00ACC1]">
+          <ListItem className="hover:bg-blue-300">
             <ListItemPrefix>
             <Icon path={mdiBriefcaseEdit} size={1} />
             </ListItemPrefix>
@@ -137,16 +142,16 @@ function handleLogOut(){
           </ListItem>
           </Link>
           <Link to='/Reports'>
-          <ListItem className="hover:bg-[#00ACC1]">
+          <ListItem className="hover:bg-blue-300">
             <ListItemPrefix>
             <Icon path={mdiAlert} size={1} />
             </ListItemPrefix>
             <a style={{color:'black'}}> Reports </a>
           </ListItem>
-          </Link>
+          </Link> */}
 
          <Link to='/ContactAdmin'>
-         <ListItem className="hover:bg-[#00ACC1]">
+         <ListItem className="hover:bg-blue-300">
             <ListItemPrefix>
               <Icon path={mdiEmail}className="h-5 w-5" />
             </ListItemPrefix>
@@ -157,7 +162,7 @@ function handleLogOut(){
 
 
            <button onClick={handleLogOut}>
-           <ListItem className="hover:bg-[#00ACC1]">
+           <ListItem className="hover:bg-blue-300">
             <ListItemPrefix>
               <PowerIcon className="h-5 w-5" />
             </ListItemPrefix>

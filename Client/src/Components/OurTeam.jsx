@@ -15,8 +15,8 @@ const OurTeam = () => {
       <div className="text-center w-60 text-gray-500 dark:text-gray-400">
         <img
           className="mx-auto mb-4 w-36 h-36 rounded-full"
-          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
-          alt="Bonnie Avatar"
+          src="https://pps.whatsapp.net/v/t61.24694-24/367776445_606293871656531_2838127491847927166_n.jpg?ccb=11-4&oh=01_AdQ-GYIhxO1xUZZs9fq9SkC-ZE52MhyeqNQMDnQ2BgqqlA&oe=64EBA6D5&_nc_cat=103"
+          alt="AYMAN AL-ATTILI"
         />
         <h3 className="mb-1 text-2xl font-bold tracking-tight text-[#102C57] dark:text-white">
           <span>AYMAN AL-ATTILI</span>
@@ -67,8 +67,8 @@ const OurTeam = () => {
       <div className="text-center w-60 text-gray-500 dark:text-gray-400">
         <img
           className="mx-auto mb-4 w-36 h-36 rounded-full"
-          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/helene-engels.png"
-          alt="Helene Avatar"
+          src=""
+          alt="AHMAD JUEITEM"
         />
         <h3 className="mb-1 text-2xl font-bold tracking-tight text-[#102C57] dark:text-white">
           <span>AHMAD JUEITEM</span>
@@ -117,8 +117,8 @@ const OurTeam = () => {
       <div className="text-center w-60 text-gray-500 dark:text-gray-400">
         <img
           className="mx-auto mb-4 w-36 h-36 rounded-full"
-          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
-          alt="Jese Avatar"
+          src="https://pps.whatsapp.net/v/t61.24694-24/361672287_289109703714209_1424653469999388503_n.jpg?ccb=11-4&oh=01_AdS4rx6YunePD0ySd77mKy2bJaLF-2Azjs7Eoqc14tmRxA&oe=64F1C722&_nc_cat=104"
+          alt="ASMA  AL-ATTILI"
         />
         <h3 className="mb-1 text-2xl font-bold tracking-tight text-[#102C57] dark:text-white">
           <span>ASMA  AL-ATTILI</span>
@@ -167,8 +167,8 @@ const OurTeam = () => {
       <div className="text-center w-60 text-gray-500 dark:text-gray-400">
         <img
           className="mx-auto mb-4 w-36 h-36 rounded-full"
-          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png"
-          alt="Joseph Avatar"
+          src="https://pps.whatsapp.net/v/t61.24694-24/317658946_173099258688230_6781103210469355576_n.jpg?ccb=11-4&oh=01_AdQfbRPUKgs_7I8Rd7QunaCq_XdO8Ch682mVzB2c9PBGqA&oe=64EAC638"
+          alt="MOHUMMAD AL-SYOUF"
         />
         <h3 className="mb-1 text-2xl font-bold tracking-tight text-[#102C57] dark:text-white">
           <span>MOHUMMAD AL-SYOUF </span>
@@ -217,8 +217,8 @@ const OurTeam = () => {
       <div className="text-center w-60 text-gray-500 dark:text-gray-400">
         <img
           className="mx-auto mb-4 w-36 h-36 rounded-full"
-          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/sofia-mcguire.png"
-          alt="Sofia Avatar"
+          src=""
+          alt="Qais Abu Ghazleh"
         />
         <h3 className="mb-1 text-2xl font-bold tracking-tight text-[#102C57] dark:text-white">
           <span>Qais Abu Ghazleh</span>
@@ -267,8 +267,8 @@ const OurTeam = () => {
       <div className="text-center w-60 text-gray-500 dark:text-gray-400">
         <img
           className="mx-auto mb-4 w-36 h-36 rounded-full"
-          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/thomas-lean.png"
-          alt="Leslie Avatar"
+          src=""
+          alt="MAI ARAR"
         />
         <h3 className="mb-1 text-2xl font-bold tracking-tight text-[#102C57] dark:text-white">
           <span>MAI ARAR</span>

@@ -5,10 +5,12 @@ module.exports = withMT({
   content: [
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
-    "./node_modules/tw-elements/dist/js/**/*.js",
+    "./node_modules/tw-elements/dist/js//*.js"
+
   ],
   theme: {
     extend: {},
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"), require('flowbite/plugin')
+],
 });

@@ -3,6 +3,7 @@ const cors = require("cors");
 const PORT = process.env.PORT;
 const dbURI = process.env.dbURI;
 const userRoute = require('./routes/userRoute')
+const contactRoute = require('./routes/contactRoute')
 
 const mongoose = require("mongoose");
 
@@ -17,6 +18,7 @@ app.get("/", (req, res) => {
 });
 
 app.use(userRoute)
+app.use(contactRoute)
 module.exports = {
   server: app,
   start: () => {

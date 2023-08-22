@@ -3,113 +3,24 @@ import {
   Navbar,
   MobileNav,
   Typography,
-  Button,
-  Menu,
-  MenuHandler,
-  MenuList,
   MenuItem,
-  Avatar,
-  Card,
   IconButton,
+  Button,
 } from "@material-tailwind/react";
 import {
   CubeTransparentIcon,
-  UserCircleIcon,
-  CodeBracketSquareIcon,
-  Square3Stack3DIcon,
-  ChevronDownIcon,
-  Cog6ToothIcon,
-  InboxArrowDownIcon,
-  LifebuoyIcon,
-  PowerIcon,
-  RocketLaunchIcon,
   Bars2Icon,
+  ChartBarIcon,
+  TableCellsIcon,
+  ChatBubbleBottomCenterIcon,
 } from "@heroicons/react/24/outline";
- 
-// profile menu component
-const profileMenuItems = [
-  {
-    label: "My Profile",
-    icon: UserCircleIcon,
-  },
-  {
-    label: "Edit Profile",
-    icon: Cog6ToothIcon,
-  },
-  {
-    label: "Inbox",
-    icon: InboxArrowDownIcon,
-  },
-  {
-    label: "Help",
-    icon: LifebuoyIcon,
-  },
-  {
-    label: "Sign Out",
-    icon: PowerIcon,
-  },
-];
- 
-function ProfileMenu() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
- 
-  const closeMenu = () => setIsMenuOpen(false);
- 
-  return (
-    <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end">
-      <MenuHandler>
-        <Button
-          variant="text"
-          color="blue-gray"
-          className="flex items-center gap-1 rounded-full py-0.5 pr-2 pl-0.5 lg:ml-auto"
-        >
-          <Avatar
-            variant="circular"
-            size="sm"
-            alt="tania andrew"
-            className="border border-gray-900 p-0.5"
-            src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
-          />
-          <ChevronDownIcon
-            strokeWidth={2.5}
-            className={`h-3 w-3 transition-transform ${
-              isMenuOpen ? "rotate-180" : ""
-            }`}
-          />
-        </Button>
-      </MenuHandler>
-      <MenuList className="p-1">
-        {profileMenuItems.map(({ label, icon }, key) => {
-          const isLastItem = key === profileMenuItems.length - 1;
-          return (
-            <MenuItem
-              key={label}
-              onClick={closeMenu}
-              className={`flex items-center gap-2 rounded ${
-                isLastItem
-                  ? "hover:bg-red-500/10 focus:bg-red-500/10 active:bg-red-500/10"
-                  : ""
-              }`}
-            >
-              {React.createElement(icon, {
-                className: `h-4 w-4 ${isLastItem ? "text-red-500" : ""}`,
-                strokeWidth: 2,
-              })}
-              <Typography
-                as="span"
-                variant="small"
-                className="font-normal"
-                color={isLastItem ? "red" : "inherit"}
-              >
-                {label}
-              </Typography>
-            </MenuItem>
-          );
-        })}
-      </MenuList>
-    </Menu>
-  );
-}
+import Logo from '../../Images/logo.png';
+import { Link } from "react-router-dom";
+import { PlusCircleIcon } from "@heroicons/react/24/solid";
+
+import Swal from 'sweetalert2'
+
+
  
 
  
@@ -118,27 +29,77 @@ function ProfileMenu() {
 // nav list component
 const navListItems = [
   {
-    label: "Account",
-    icon: UserCircleIcon,
+    label: "Statistics",
+    icon: ChartBarIcon,
+    path:"/"
   },
   {
-    label: "Blocks",
+    label: "Admins",
     icon: CubeTransparentIcon,
+    path:"/ListAdmin"
+
   },
   {
-    label: "Docs",
-    icon: CodeBracketSquareIcon,
+    label: "Airlines",
+    icon: TableCellsIcon,
+    path:"/Airlines"
+
+  },
+  {
+    label: "Add Airline",
+    icon: PlusCircleIcon,
+    path:"/AddAirline"
+
+  },
+  {
+    label: "Inbox",
+    icon: ChatBubbleBottomCenterIcon,
+    path:"/ContactAdmin"
+
   },
 ];
  
 function NavList() {
+
+ function handleLogOut(){
+  const ReactUrl = import.meta.env.VITE_REACT_APP_API_REACT_URL;
+
+    
+
+
+  Swal.fire({
+    title: ` logout?  `,
+    showConfirmButton: true,
+    showCancelButton: true,
+    confirmButtonText: "OK",
+    cancelButtonText: "Cancel",
+    icon: 'warning',
+    iconColor: 'orange',
+}
+).then((result) => {
+    /* Read more about isConfirmed, isDenied below */
+    if (result.isConfirmed) {
+
+        Swal.fire(`  done `, '', 'success');
+     
+        localStorage.removeItem("auth");
+        window.location.href = ReactUrl;
+      
+
+    } else
+        Swal.fire(' Cancelled', '', 'error')
+
+})
+
+}
+
   return (
     <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
-      {navListItems.map(({ label, icon }, key) => (
+      {navListItems.map(({ label, icon , path}, key) => (
+        
+        <Link to={path}>
         <Typography
           key={label}
-          as="a"
-          href="#"
           variant="small"
           color="blue-gray"
           className="font-normal"
@@ -147,8 +108,11 @@ function NavList() {
             {React.createElement(icon, { className: "h-[18px] w-[18px]" })}{" "}
             {label}
           </MenuItem>
-        </Typography>
+        </Typography></Link>
       ))}
+      <Button
+       onClick={handleLogOut}
+      className="w-full">LogOut</Button>
     </ul>
   );
 }
@@ -166,15 +130,16 @@ export default function ComplexNavbar() {
   }, []);
  
   return (
-    <Navbar className="max-w-full p-2 lg:rounded-full lg:pl-6">
+    <Navbar className="max-w-full p-2 lg:rounded-full lg:pl-6 inline-block lg:hidden">
       <div className="relative  flex items-center text-blue-gray-900">
-        <Typography
-          as="a"
-          href="#"
-          className="mr-4 ml-2 cursor-pointer py-1.5 font-medium"
-        >
-          Material Tailwind
-        </Typography>
+      <Link to="/">
+            <Typography
+              id="logo"
+              className="mr-4 cursor-pointer  font-bold text-2xl"
+            >
+    <div className='flex items-center'> <img src={Logo} className='w-12 h-14' /> <p className='pt-3 text-lg font-bold'>BaGuard</p> </div>
+            </Typography>
+          </Link>
         <div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
           <NavList />
         </div>
@@ -187,7 +152,6 @@ export default function ComplexNavbar() {
         >
           <Bars2Icon className="h-6 w-6" />
         </IconButton>
-        <ProfileMenu />
       </div>
       <MobileNav open={isNavOpen} className="overflow-scroll">
         <NavList />

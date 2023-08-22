@@ -22,6 +22,8 @@ import { HashLink } from 'react-router-hash-link';
 
 
 export default function Nav() {
+  const ReactUrl = import.meta.env.VITE_REACT_APP_API_REACT_URL;
+
   const [openNav, setOpenNav] = React.useState(false);
   const [loggedIn, setLoggedIn] = useState(true);
 
@@ -81,10 +83,10 @@ export default function Nav() {
 
 
   const handleLogOut = () => {
-    localStorage.removeItem("user");
+    localStorage.removeItem("auth");
     setLoggedIn(false);
     setOpenNav(false);
-    navigate("/");
+    window.location.href = `${ReactUrl}/`;
   };
 
   const profileMenuItems = [
@@ -104,11 +106,11 @@ export default function Nav() {
       setIsMenuOpen(false);
 
       if (label == "Sign Out") {
-        localStorage.removeItem("user");
+        localStorage.removeItem("auth");
 
-        window.location.href = "http://localhost:3000/";
+        window.location.href = `${ReactUrl}/`;
       } else if (label == "Dashboard") {
-        window.location.href = "http://localhost:3000/Dashboard";
+        window.location.href = `${ReactUrl}/`;
       }
     };
 
@@ -123,7 +125,7 @@ export default function Nav() {
             >
               <svg
                 xmlns="https://source.unsplash.com/MP0IUfwrn0A"
-                className="h-7 w-7 text-[#75d5c7]"
+                className="h-7 w-7 text-blue-800"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -231,7 +233,7 @@ export default function Nav() {
               )}
             </IconButton>
           </div>
-          {localStorage.user !== undefined && loggedIn ? (
+          {localStorage.auth !== undefined && loggedIn ? (
             <>
               <ProfileMenu />
             </>
@@ -246,9 +248,9 @@ export default function Nav() {
         <Collapse open={openNav}>
           {navList}
 
-          {localStorage.user !== undefined ? (
+          {localStorage.auth !== undefined ? (
             <>
-              <Link to="/Dashboard">
+              <Link to="/">
                 <Button
                   onClick={() => setOpenNav(false)}
                   size="sm"

@@ -5,6 +5,7 @@ import axios from 'axios';
 
 const Login = () => {
   const ApiUrl = import.meta.env.VITE_REACT_APP_API_URL;
+  const ReactUrl = import.meta.env.VITE_REACT_APP_API_REACT_URL;
 
   const [Email , setEmail] = useState ('');
   const [Password , setPassword] = useState ('');
@@ -12,11 +13,20 @@ const Login = () => {
 
   const handleLogin = async(e) => {
 e.preventDefault();
-console.log(Email , Password) 
 
 try {
   const Airline = await axios.post(`${ApiUrl}/LogIn`, {Email : Email , Password : Password})
-  console.log(Airline.data)
+  // console.log(Airline.data)
+  
+  if (Airline.data.error !== "incorrect password" && Airline.data.error === undefined) {
+    localStorage.setItem("auth", Airline.data.token);
+    window.location.href = `${ReactUrl}/`;
+    setEmail("");
+    setPassword("");
+  } else {
+    // setpasswordp(response.data.error === "incorrect password" ? "incorrect password": "");
+    // setemailp(response.data.error === "incorrect password" ? " ": response.data.error );
+  }
 } catch (error) {
  console.error (error)
 }

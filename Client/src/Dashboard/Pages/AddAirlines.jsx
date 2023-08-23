@@ -24,13 +24,13 @@ const AddAirlines = () => {
    }
   
   return (
-    <section className="h-screen">
-    <div className="h-full">
+    <section className="h-screen p-5 bg-base-200 rounded-lg shadow-lg m-20">
+    <div className="h-full ">
       {/* <!-- Left column container with background--> */}
-      <div className="g-6 flex h-full flex-wrap items-center justify-center">
+      <div className="gap-6 flex h-full flex-wrap items-center justify-center">
         <div className="shrink-1 mb-12 grow-0 basis-auto md:mb-0 md:w-9/12 md:shrink-0 lg:w-6/12 xl:w-5/12">
           <img
-            src="https://media.discordapp.net/attachments/1128667731894485004/1142713200907915284/31226.jpg?width=973&height=662"
+            src="https://volaro.net/wp-content/uploads/2020/08/airplane-in-the-clouds-getty.jpg"
             className="w-full"
             alt="Sample image"
           />
@@ -46,7 +46,7 @@ const AddAirlines = () => {
               type="email"
               label="Email address"
               size="lg"
-              className="mb-6"
+              className="mb-6 bg-white"
               value={Email}
               onChange={(e)=>{setEmail(e.target.value);}}
 
@@ -56,7 +56,7 @@ const AddAirlines = () => {
             <TEInput
               type="password"
               label="Password"
-              className="mb-6"
+              className="mb-6 bg-white"
               size="lg"
               value={Password}
               onChange={(e)=>{setPassword(e.target.value);}}

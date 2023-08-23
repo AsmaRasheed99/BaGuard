@@ -4,18 +4,17 @@ import React, { useState } from 'react'
 const Searchbar = ({onchangeSearchFunction,arrayToFilter,searchType}) => {
     const [SearchTerm,setSearchTerm] = useState()
 
-    const handleSearch =(searchText)=>{
-        setSearchTerm(searchText)
+    const handleSearch =()=>{
         let NewArray;
         if(searchType ==="id"){
             NewArray=  arrayToFilter.filter((ticket)=>{
-                return ticket._id ===(searchText)
+                return ticket._id ===(SearchTerm)
             })
 
 
         }else if (searchType ==="name"){
             NewArray=  arrayToFilter.filter((ticket)=>{
-                return ticket.Name ===(searchText)
+                return ticket.Name ===(SearchTerm)
             })
         }
 
@@ -30,9 +29,12 @@ const Searchbar = ({onchangeSearchFunction,arrayToFilter,searchType}) => {
             className="block w-full px-4 py-2 text-purple-700 bg-white border rounded-full focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
             placeholder="Search..."
             value={SearchTerm}
-            onChange={(e)=>handleSearch(e.target.value)}
+            onChange={(e)=>setSearchTerm(e.target.value)}
         />
-        <button className="px-4 text-white bg-purple-600 rounded-full ">
+        <button onClick={()=>handleSearch()}
+        
+        
+        className="px-4 text-white bg-purple-600 rounded-full ">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-5 h-5"

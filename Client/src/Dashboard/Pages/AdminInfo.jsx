@@ -49,14 +49,20 @@ useEffect(()=>{
 
   return (
     <>
-      <section className="p-20">
+      
+      <div className="bg-[#ffffff] mr-5 ml-5 p-10 rounded-2xl min-h-[calc(100vh)]   ">
+        <span className="font-bold text-xl py-5 px-3">Add Admin</span>
+      <section className="p-14 rounded-lg shadow-lg bg-base-200 mb-20">
         <div className="h-full">
           {/* <!-- Left column container with background--> */}
-          <div className="g-6 flex h-full flex-wrap items-center">
+          <div className=" flex h-full flex-wrap justify-around items-center">
                  
 
             {/* <!-- Right column container --> */}
-            <div className="mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12">
+            <div className="w-1/2">
+              <img src="https://www.lets-connect.co.uk/wp-content/uploads/2020/04/man-using-desktop-computer.jpg"/>
+            </div>
+            <div className="mb-12 md:mb-0 w-80">
               <form onSubmit={handleRegister}>
                 {/* <!-- Email input --> */}
                 <TEInput
@@ -95,11 +101,10 @@ useEffect(()=>{
                 </div>
               </form>
             </div>
+            
           </div>
         </div>
       </section>
-
-      <div className="bg-[#ffffff] mr-5 ml-5 p-10 rounded-2xl min-h-[calc(100vh)]   ">
         <div className="relative flex items-center justify-between pt-4">
           <div className="text-xl font-bold text-navy-700 dark:text-white">
             Admins
@@ -196,6 +201,8 @@ useEffect(()=>{
             })}
           </table>
         </div>
+       
+
       </div>
     </>
   );

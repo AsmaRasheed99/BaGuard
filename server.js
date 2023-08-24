@@ -1,16 +1,14 @@
+require("dotenv").config();
 const express = require("express");
-const cors = require("cors");
-const PORT = process.env.PORT ;
-const dbURI = process.env.dbURI;
-const userRoute = require('./routes/userRoute')
-const contactRoute = require('./routes/contactRoute')
-const mongoose = require("mongoose");
+const app = express();
+var cors = require("cors");
 const path = require("path");
 
-const app = express();
-app.use(cors());
+const PORT = process.env.PORT || 4000;
 
-app.use(express.json());
+const corsOptions = {
+  origin: "*",
+};
 
 // to redirect frontend
 app.use(express.static(path.join(__dirname, "/Client/dist")));
@@ -18,24 +16,25 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname + "/Client/dist/index.html"));
 });
 
-app.get("/", (req, res) => {
-  res.send("Welcome");
-});
+app.use(cors(corsOptions));
+app.use(express.json());
+app.use(require("./routes/todoRoute.js"));
+const mongo = require("./db");
 
-app.use(userRoute)
-app.use(contactRoute)
-module.exports = {
-  server: app,
-  start: () => {
-    mongoose
-      .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
-      .then(() => {
-        app.listen(PORT, () => {
-          console.log(`Starting server on port ${PORT}`);
-        });
-      });
-  },
+const connectToMongoDB = async () => {
+  await mongo().then(() => {
+    try {
+      console.log("connect to mongodb! :) ");
+    } catch (error) {
+      console.log("error is", error);
+    } finally {
+      console.log("finally");
+      //   mongoose.connection.close();
+    }
+  });
 };
 
-
-
+app.listen(PORT, () => {
+  connectToMongoDB();
+  console.log("server is running on ", PORT);
+});

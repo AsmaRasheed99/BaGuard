@@ -16,7 +16,7 @@ const Track = ({ticket}) => {
       container: "map",
       style: `https://maps.geo.${region}.amazonaws.com/maps/v0/maps/${mapName}/style-descriptor?key=${apiKey}`,
       center: [Longitude, Latitude],
-      zoom: 10,
+      zoom: 5,
     });
 
     map.addControl(new maplibregl.NavigationControl(), "top-left");

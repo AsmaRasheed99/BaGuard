@@ -16,6 +16,7 @@ const Search = () => {
     const handleSubmit = () => {
       Navigate(`/Airline/${ticketId}`);
     };
+    
   return (
     <section id="Hero" className="flex justify-center h-screen items-center bg-cover bg-no-repeat " style={{backgroundImage:'url(https://i.pinimg.com/originals/b9/fd/07/b9fd0706b105d23574ff54278e497442.jpg)' , backgroundAttachment:'fixed'}}>
     <div className="flex flex-wrap justify-center lg:p-16 md:p px-4 items-center gap-2 ">
@@ -38,7 +39,7 @@ const Search = () => {
               type="text"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-700 focus:border-blue-700 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="ticket Number"
-              required=""
+              required
               value={ticketId}
               onChange={(e) => {
                 setTicketId(e.target.value);

@@ -1,6 +1,6 @@
 import Icon from "@mdi/react";
 import { mdiAirplaneCheck , mdiSecurity ,mdiBagCarryOnCheck ,mdiSortReverseVariant, mdiAirplaneClock} from "@mdi/js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import AWSMap from '../Components/Map'
 const Airline = () => {
@@ -8,6 +8,25 @@ const Airline = () => {
   const [activeTab, setActiveTab] = useState("tab1");
   const { TicketId } = useParams();
 
+   const [ticket , setTicket] = useState("");
+  const [tickets,setTickets]=useState([    
+    {name:"asma",_id:"123456", number:"0797979521", Latitude: 31.963158, Longitude: 35.930359},
+    {name:"majdi",_id:"756887", number:"0797979521", Latitude: 61.539449, Longitude: 67.035957},
+    {name:"tamara",_id:"757575", number:"0797979521",Latitude: -33.8688, Longitude: 151.2093},
+])
+  
+useEffect(()=>{
+ if (tickets && TicketId) {
+  setTicket(
+     tickets.filter((ticket)=>{
+      return ticket._id === TicketId
+    })
+  )
+
+ }
+},[tickets, TicketId])
+
+// console.log(ticket)
 
   const openTab = (tabName) => {
     setActiveTab(tabName);
@@ -16,7 +35,7 @@ const Airline = () => {
   return (
     <>
     <div className="h-screen w-screen flex justify-center bg-base-200">
-        <AWSMap/>
+        <AWSMap ticket={ticket}/>
         </div>
 
         <>

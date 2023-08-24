@@ -11,10 +11,7 @@ const Luggage = () => {
     ])
 
 
-    // useEffect(()=>{
-    //     onchangeSearch([])
-    // },[])
-
+   
 
     const handleSearchArray = (filterdArray) =>{
         onchangeSearch(filterdArray)
@@ -153,9 +150,7 @@ const Luggage = () => {
               </div>
             </div>
           </>
-        )
         
-
 
     </>
   )

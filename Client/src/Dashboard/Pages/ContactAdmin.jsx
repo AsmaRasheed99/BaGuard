@@ -3,7 +3,6 @@ import axios from "axios";
 import Icon from '@mdi/react';
 import { mdiEmail,
 } from '@mdi/js';
-import Avatar from '@mui/material/Avatar';
 const ContactAdmin = () => {
   const ApiUrl = import.meta.env.VITE_REACT_APP_API_URL;
 
@@ -108,17 +107,12 @@ const ContactAdmin = () => {
                   console.log(e);
                   let firstLetter = e.Name.charAt(0);
                          console.log(firstLetter)
-                  const avatarStyle = {
-                    backgroundColor: Checkcolor(e), // Set the desired color
-                    color: "#fff", // Set the text color for contrast
-                  };
-                console.log(avatarStyle)
+             
                   return (
                     <button
                       onClick={() => HandleUser(e)}
                       className="flex flex-row items-center hover:bg-gray-100 rounded-xl p-2"
                     >
-                      <Avatar style={avatarStyle}>{firstLetter}</Avatar>
                       <div className="ml-2 text-sm font-semibold">
                         {e.Name}
                         { console.log(e.Name)}
@@ -144,10 +138,7 @@ const ContactAdmin = () => {
 
                                 <div className="flex flex-row items-center">
 
-                                <Avatar style={avColor}>
-                                  {currentUser.Name?.charAt(0)}
-                                </Avatar>
-                                
+                               
                                 <p>{e}</p>
                                 </div>
                                 </div>

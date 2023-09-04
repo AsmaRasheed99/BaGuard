@@ -5,5 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   envDir: './',
+  base: '/my-a/', // Replace 'my-subdirectory' with your desired subdirectory name
+
 
 })

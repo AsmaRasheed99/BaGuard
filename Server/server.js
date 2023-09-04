@@ -16,8 +16,12 @@ app.use(express.json());
 const proxy = httpProxy.createProxyServer({});
 
 // Your other routes and middleware
-app.get("/", (req, res) => {
-  res.send("Welcome");
+// Serve your Vite.js app's built assets (in production)
+app.use(express.static(path.join(__dirname, 'dist')));
+
+// Define a catch-all route to serve your app's entry point (in production)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 app.use(userRoute);
 app.use(contactRoute);

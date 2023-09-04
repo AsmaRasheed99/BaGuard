@@ -28,7 +28,7 @@ try {
     // setemailp(response.data.error === "incorrect password" ? " ": response.data.error );
   }
 } catch (error) {
- console.error (error)
+ console.error (error.message)
 }
 
 

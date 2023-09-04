@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Video from "../Images/Hero.mp4";
 import { useNavigate } from "react-router-dom";
 import 'aos/dist/aos.css'; 
 import AOS from 'aos';

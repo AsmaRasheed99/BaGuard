@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { TEInput, TERipple } from "tw-elements-react";
-import logo from "../Images/Logo.png"
+// import logo from "../Images/Logo.png"
 import axios from 'axios';
 
 const Login = () => {
@@ -50,7 +50,7 @@ try {
                   <div className="text-center">
                     <img
                       className="mx-auto w-48"
-                      src={logo}
+                      // src={logo}
                       alt="logo"
                     />
                     <h4 className="mb-12 mt-1 pb-1 text-xl font-semibold">

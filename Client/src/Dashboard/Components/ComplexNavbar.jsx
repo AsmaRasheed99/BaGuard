@@ -14,7 +14,7 @@ import {
   TableCellsIcon,
   ChatBubbleBottomCenterIcon,
 } from "@heroicons/react/24/outline";
-import Logo from '../../Images/logo.png';
+// import Logo from '../../Images/logo.png';
 import { Link } from "react-router-dom";
 import { PlusCircleIcon } from "@heroicons/react/24/solid";
 
@@ -137,7 +137,7 @@ export default function ComplexNavbar() {
               id="logo"
               className="mr-4 cursor-pointer  font-bold text-2xl"
             >
-    <div className='flex items-center'> <img src={Logo} className='w-12 h-14' /> <p className='pt-3 text-lg font-bold'>BaGuard</p> </div>
+    {/* <div className='flex items-center'> <img src={Logo} className='w-12 h-14' /> <p className='pt-3 text-lg font-bold'>BaGuard</p> </div> */}
             </Typography>
           </Link>
         <div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">

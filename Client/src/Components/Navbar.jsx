@@ -1,4 +1,4 @@
-import Logo from '../Images/Logo.png'
+// import Logo from '../Images/Logo.png'
 import React, { useState } from "react";
 import {
   Navbar,
@@ -188,7 +188,7 @@ export default function Nav() {
               id="logo"
               className="mr-4 cursor-pointer  font-bold text-2xl"
             >
-    <div className='flex items-center'> <img src={Logo} className='w-12 h-14' /> <p className='pt-3 text-lg font-bold'>BaGuard</p> </div>
+    {/* <div className='flex items-center'> <img src={Logo} className='w-12 h-14' /> <p className='pt-3 text-lg font-bold'>BaGuard</p> </div> */}
             </Typography>
           </Link>
 

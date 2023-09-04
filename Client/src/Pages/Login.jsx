@@ -6,7 +6,10 @@ import axios from 'axios';
 const Login = () => {
   const ApiUrl = import.meta.env.VITE_REACT_APP_API_URL;
   const ReactUrl = import.meta.env.VITE_REACT_APP_API_REACT_URL;
-
+  const Port = import.meta.env.PORT;
+ console.log(ApiUrl)
+ console.log(ReactUrl)
+ console.log(Port)
   const [Email , setEmail] = useState ('');
   const [Password , setPassword] = useState ('');
 

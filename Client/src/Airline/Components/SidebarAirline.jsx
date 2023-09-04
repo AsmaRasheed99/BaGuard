@@ -2,7 +2,7 @@ import Icon from '@mdi/react';
 import {  mdiAirplane, mdiAirplanePlus, mdiBook, mdiBookAccountOutline, mdiBriefcaseEdit, mdiCarSearchOutline, mdiEmail, mdiFileEdit, mdiHandshake, mdiMapSearch, mdiMapSearchOutline, mdiNote, mdiNoteSearch, mdiNotebook, mdiNotebookHeart, mdiPlus, mdiReload, mdiSearchWeb, mdiTagSearchOutline  } from '@mdi/js';
 import { mdiShieldCrownOutline,mdiAlert } from '@mdi/js';
 import React from "react";
-// import Logo from '../../Images/logo.png';
+import Logo from '../../Images/logo.png';
 
 
 import {
@@ -63,7 +63,7 @@ function handleLogOut(){
               id="logo"
               className="mr-4 cursor-pointer  font-bold text-2xl"
             >
-    {/* <div className='flex items-center'> <img src={Logo} className='w-12 h-14' /> <p className='pt-3 text-lg font-bold'>Airline Name</p> </div> */}
+    <div className='flex items-center'> <img src={Logo} className='w-12 h-14' /> <p className='pt-3 text-lg font-bold'>Airline Name</p> </div>
             </Typography>
           </Link>
         </div>

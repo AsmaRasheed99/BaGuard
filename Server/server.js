@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '../Client', 'dist')));
 
 // Define a catch-all route to serve the client application's entry point
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../Client', 'dist', 'index.html'));
 });
 app.use(userRoute);

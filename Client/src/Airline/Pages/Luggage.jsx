@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Searchbar from '../Components/Searchbar'
 import Track from '../Components/Track'
+
 const Luggage = () => {
 
     const [changeSearch,onchangeSearch]=useState([])
     const [tickets,setTickets]=useState([    
-        {name:"asma",_id:"123456", number:"0797979521", Latitude: 31.963158, Longitude: 35.930359},
+        {name:"asma",_id:"id", number:"0797979521", Latitude: 31.963158, Longitude: 35.930359},
         {name:"majdi",_id:"756887", number:"0797979521", Latitude: 61.539449, Longitude: 67.035957},
         {name:"tamara",_id:"757575", number:"0797979521",Latitude: -33.8688, Longitude: 151.2093},
     ])
@@ -38,7 +39,11 @@ const Luggage = () => {
               
               <Track ticket={changeSearch} />
               
-        
+              <div>^^^^^^^^^^^^^^^^^^^^^^</div>
+              {changeSearch.map((or)=>{
+                return (<div>{or.AccelX} {or.AccelY} {or.AccelZ}</div>)
+                 
+              })}
               <div className="mt-8 overflow-x-scroll xl:overflow-hidden ">
                 <table role="table" className="w-full">
                   <thead>

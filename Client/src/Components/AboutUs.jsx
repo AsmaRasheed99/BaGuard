@@ -58,8 +58,8 @@ const AboutUs = () => {
             <div className="w-full pt-5 shrink-0 grow-0 basis-auto md:px-6 lg:w-7/12">
               <div
                 className="mb-12 flex"
-                data-aos="zoom-in-left"
-                data-aos-duration="1000"
+                data-aos="fade-up"
+                data-aos-duration="2000"
               >
                 <div className="shrink-0">
                   <div className="rounded-md bg-[#102c57] p-4 shadow-lg dark:bg-[hsl(204,23%,30%)]">
@@ -79,8 +79,8 @@ const AboutUs = () => {
               </div>
               <div
                 className="mb-12 flex"
-                data-aos="zoom-in-left"
-                data-aos-duration="1000"
+                data-aos="fade-up"
+                data-aos-duration="2000"
               >
                 <div className="shrink-0">
                   <div className="rounded-md bg-[#102c57] p-4 shadow-lg dark:bg-[hsl(204,23%,30%)]">
@@ -105,8 +105,8 @@ const AboutUs = () => {
               </div>
               <div
                 className="mb-12 flex"
-                data-aos="zoom-in-left"
-                data-aos-duration="1000"
+                data-aos="fade-up"
+                data-aos-duration="2000"
               >
                 <div className="shrink-0">
                   <div className="rounded-md bg-[#102c57] p-4 shadow-lg dark:bg-[hsl(204,23%,30%)]">

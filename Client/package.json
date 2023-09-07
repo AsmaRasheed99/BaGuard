@@ -12,6 +12,7 @@
     "start:production": "vite preview --mode production"
   },
   "dependencies": {
+    "@firebase/app": "^0.9.18",
     "@heroicons/react": "^2.0.18",
     "@material-tailwind/react": "^2.1.0",
     "@mdi/js": "^7.2.96",
@@ -21,6 +22,7 @@
     "axios": "^1.4.0",
     "chart.js": "^4.3.3",
     "dotenv": "^16.3.1",
+    "firebase": "^10.3.1",
     "flowbite": "^1.8.1",
     "flowbite-react": "^0.5.0",
     "leaflet": "^1.7.1",

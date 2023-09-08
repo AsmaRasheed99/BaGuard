@@ -4,7 +4,7 @@ import React, { useState } from "react";
 const ApiUrl = import.meta.env.VITE_REACT_APP_API_URL;
 const ReactUrl = import.meta.env.VITE_REACT_APP_API_REACT_URL;
 
-const Searchbar = ({ onchangeSearchFunction }) => {
+const Searchbar = ({ onchangeSearchFunction , setId}) => {
   const [SearchTerm, setSearchTerm] = useState();
   const [lastOrientation , setLastOrientation] = useState();
   function getLastKey(obj) {
@@ -12,15 +12,15 @@ const Searchbar = ({ onchangeSearchFunction }) => {
     return keys[keys.length - 1];
   }
 
-  const getOrientation = async (id) => {
+  const getLocation = async (id) => {
     try {
-      const response = await axios.get(`${ApiUrl}/getOrientation/${id}`);
-        
-      const AllOrientation = response.data[id];
-      if (AllOrientation) {
-      const lastKey = getLastKey(AllOrientation);
-      setLastOrientation(AllOrientation[lastKey]);
-            onchangeSearchFunction([AllOrientation[lastKey]]);
+      const response = await axios.get(`${ApiUrl}/getLocation/${id}`);
+      const AllLocations = response.data;
+      if (AllLocations) {
+        setId(id);
+      const lastKey = getLastKey(AllLocations);
+      setLastOrientation(AllLocations[lastKey]);
+            onchangeSearchFunction([AllLocations[lastKey]]);
       }
       else {
         alert("not found");
@@ -30,7 +30,7 @@ const Searchbar = ({ onchangeSearchFunction }) => {
     }
   };
   const handleSearch = () => {
-      getOrientation(SearchTerm);
+    getLocation(SearchTerm);
    
   };
 

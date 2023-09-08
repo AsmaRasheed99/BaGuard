@@ -12,23 +12,19 @@ const db = admin.database();
 const rootRef = db.ref();
 
 // Access data under a specific node (e.g., "users")
-const usersRef = rootRef.child('esp32');
+const usersRef = rootRef.child('Device');
 
 
-const getOrientation = async (req , res) =>{
+const getLocation = async (req , res) =>{
     const id = req.params.id;
     usersRef.once('value')
     .then((snapshot) => {
       const data = snapshot.val();
+      console.log(data[id].locations);
       const filteredData = {};
-      for (const key in data) {
-        if (key === id) {
-    
-          filteredData[key] = data[key];
-        }
-      }
+   
       console.log('Retrieved data', filteredData);
-    res.json(filteredData);
+    res.json(data[id].locations);
     })
     .catch((error) => {
       console.error('Error retrieving data:', error);
@@ -41,5 +37,5 @@ const getOrientation = async (req , res) =>{
 
 
 module.exports = {
-    getOrientation
+  getLocation
 }

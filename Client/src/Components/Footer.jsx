@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import Logo from "../Images/Logo.png";
+import Logo from "../Images/Logo.png";
 import { HashLink } from "react-router-hash-link";
 import Icon from "@mdi/react";
 import { mdiArrowUp } from "@mdi/js";
@@ -43,7 +43,7 @@ const Footer = () => {
         </div>
         <div className=" mb-10 lg:w-96 lg:pl-0  w-60">
           <div className="mb-6 flex items-center ">
-            {/* <img src={Logo} alt="logo" className="w-20" /> */}
+            <img src={Logo} alt="logo" className="w-20" />
             <p className="text-xl text-[#102C57] font-bold ml-1">BaGuard</p>
           </div>
 

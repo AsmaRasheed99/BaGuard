@@ -1,29 +1,7 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import Icon from "@mdi/react";
-import {
-  mdiAccountMultipleOutline,
-  mdiAccountTie,
-  mdiAlert,
-  mdiStorePlus,
-  mdiStoreClockOutline,
-  mdiHumanQueue,
-} from "@mdi/js";
 import StockChart from "../Components/StockChart";
 import Card from "./Card";
 import Stat from "../Components/Stat";
-import {
-  Navbar,
-  Collapse,
-  Typography,
-  Button,
-  IconButton,
-  Menu,
-  MenuHandler,
-  MenuList,
-  MenuItem,
-} from "@material-tailwind/react";
 const StatisticsAirline = () => {
   const data = {
     stockFullName: "SW Limited.",
@@ -64,14 +42,14 @@ const StatisticsAirline = () => {
     <>
       <div className="flex flex-col gap-5 items-start justify-start px-10 ">
         <div className="font-bold text-3xl">Statistics</div>
-        <div className="pb-20">
+        <div className="pb-5">
           <Card />
         </div>
           <StockChart info={data} />
          
           <StockChart info={data} />
-        
         <Stat/>
+        
       </div>
     </>
   );

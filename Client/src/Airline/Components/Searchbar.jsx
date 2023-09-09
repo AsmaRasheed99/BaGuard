@@ -1,4 +1,3 @@
-import { Input } from "@material-tailwind/react";
 import axios from "axios";
 import React, { useState } from "react";
 const ApiUrl = import.meta.env.VITE_REACT_APP_API_URL;
@@ -6,7 +5,6 @@ const ReactUrl = import.meta.env.VITE_REACT_APP_API_REACT_URL;
 
 const Searchbar = ({ onchangeSearchFunction , setId}) => {
   const [SearchTerm, setSearchTerm] = useState();
-  const [lastOrientation , setLastOrientation] = useState();
   function getLastKey(obj) {
     const keys = Object.keys(obj);
     return keys[keys.length - 1];
@@ -19,7 +17,6 @@ const Searchbar = ({ onchangeSearchFunction , setId}) => {
       if (AllLocations) {
         setId(id);
       const lastKey = getLastKey(AllLocations);
-      setLastOrientation(AllLocations[lastKey]);
             onchangeSearchFunction([AllLocations[lastKey]]);
       }
       else {

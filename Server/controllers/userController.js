@@ -33,7 +33,7 @@ const AllAirLines = async (req,res) => {
     }
 }
 const AddAirline = async (req , res) => {
- const {Email , Password,role } = req.body;
+ const {Email , Password,role, Name , BaGuard } = req.body;
 try {
     const checkUser =await User.find({Email : Email})
 
@@ -41,10 +41,10 @@ try {
        res.status(500).json({error: "User already exists"})
     } else {
        const hashPassword = await bcrypt.hash(Password, 5);
-       const newUser = new User({Email: Email, Password: hashPassword , Role :role})
+       const newUser = new User({Email: Email, Password: hashPassword , Role :role , Name :Name , BaGuard :BaGuard})
        const addedUser = await newUser.save();
      
-       res.json({NewAirline : addedUser})
+       res.json({NewUser : addedUser})
     }
 
 } catch (error) {
@@ -53,6 +53,40 @@ try {
 
 
 }
+
+
+const DeleteAirline = async (req , res ) => {
+   try {
+     const Delete = await User.findByIdAndDelete({ _id : req.params.id })
+     res.json(Delete)
+   } catch (error) {
+    console.error(error.message);
+   }
+
+}
+const DeleteAdmin = async (req , res ) => {
+    const id = req.params.id;
+    console.log(id);
+   try {
+     const Delete = await User.findByIdAndDelete({ _id : id })
+     res.json(Delete)
+   } catch (error) {
+    console.error(error.message);
+   }
+
+}
+
+const EditBaGuard = async (req , res ) => {
+    const { BaGuard} = req.body
+    const id = req.params.id
+    try {
+        const Edit = await User.findByIdAndUpdate({_id: id}, {BaGuard :BaGuard})
+        res.json(Edit)
+    } catch (error) {
+        console.error(error.message)
+    }
+}
+
 const LogIn = async (req , res) => {
  const {Email , Password } = req.body;
 try {
@@ -94,4 +128,8 @@ module.exports = {
     AllAdmins,
     AllAirLines,
     getUserData,
+    DeleteAirline,
+    EditBaGuard,
+    DeleteAdmin,
+
 }

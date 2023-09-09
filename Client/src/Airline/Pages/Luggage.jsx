@@ -63,7 +63,7 @@ const Luggage = () => {
                     className="border-b border-gray-200 pr-28 pb-[10px] text-start dark:!border-navy-700"
                     style={{ cursor: "pointer" }}
                   >
-                    <p className="text-xs tracking-wide text-gray-600">Name</p>
+                    <p className="text-xs tracking-wide text-gray-600">country</p>
                   </th>
 
                   <th
@@ -74,7 +74,7 @@ const Luggage = () => {
                     style={{ cursor: "pointer" }}
                   >
                     <p className="text-xs tracking-wide text-gray-600">
-                      Number
+                      region
                     </p>
                   </th>
 
@@ -126,10 +126,20 @@ const Luggage = () => {
                           </div>
                         </div>
                       </td>
-
-                      <td className="pt-[14px] pb-[18px] sm:text-[14px]">
-                        {region}
+                      <td
+                        className="pt-[14px] pb-[18px] sm:text-[14px]"
+                        role="cell"
+                      >
+                        <div className="flex items-center gap-2">
+                          <div className="rounded-full text-xl">
+                            <p className="text-sm font-bold text-navy-700 dark:text-white">
+                            {region}
+                            </p>
+                          </div>
+                        </div>
                       </td>
+
+                   
 
                       <td
                         className="pt-[14px] pb-[18px] sm:text-[14px]"

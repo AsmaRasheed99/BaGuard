@@ -2,7 +2,7 @@ import Icon from '@mdi/react';
 import {  mdiAirplane, mdiAirplanePlus, mdiBriefcaseEdit, mdiEmail, mdiFileEdit, mdiHandshake, mdiPlus, mdiReload  } from '@mdi/js';
 import { mdiShieldCrownOutline,mdiAlert } from '@mdi/js';
 import React from "react";
-// import Logo from '../../Images/logo.png';
+import Logo from '../../Images/logo.png';
 
 
 import {
@@ -21,7 +21,6 @@ import { Link } from "react-router-dom";
 import Swal from 'sweetalert2'
 
   export default function Sidebar() {
-
 function handleLogOut(){
   const ReactUrl = import.meta.env.VITE_REACT_APP_API_REACT_URL;
 
@@ -63,7 +62,7 @@ function handleLogOut(){
               id="logo"
               className="mr-4 cursor-pointer  font-bold text-2xl"
             >
-    {/* <div className='flex items-center'> <img src={Logo} className='w-12 h-14' /> <p className='pt-3 text-lg font-bold'>BaGuard</p> </div> */}
+    <div className='flex items-center'> <img src={Logo} className='w-12 h-14' /> <p className='pt-3 text-lg font-bold'>BaGuard</p> </div>
             </Typography>
           </Link>
         </div>

@@ -16,11 +16,15 @@ const userSchema = new Schema ({
     Role : {
         type : String,
         required : true
+    },
+    Name : {
+        type : String,
+        required : true
+    },
+    BaGuard : {
+        type : Number,
+        required : false
     }
-
- 
-
-
 },
 
 {timestamps: true})

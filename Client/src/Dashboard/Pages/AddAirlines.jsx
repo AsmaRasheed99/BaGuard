@@ -8,13 +8,15 @@ const AddAirlines = () => {
   
     const [Email , setEmail] = useState ('');
     const [Password , setPassword] = useState ('');
+    const [Name , setName] = useState ('');
+    const [BaGuard , setBaGuard] = useState ('');
   
   
     const handleRegister = async (e) => {
   e.preventDefault();
         
   try {
-     const Airline = await axios.post(`${ApiUrl}/AddAirline`, {Email : Email , Password : Password,role:"Airline"})
+     const Airline = await axios.post(`${ApiUrl}/AddAirline`, {Email : Email , Password : Password,role:"Airline" , Name : Name , BaGuard : BaGuard})
      console.log(Airline.data)
   } catch (error) {
     console.error (error.message)
@@ -48,8 +50,27 @@ const AddAirlines = () => {
               size="lg"
               className="mb-6 bg-white"
               value={Email}
-              onChange={(e)=>{setEmail(e.target.value);}}
+              onChange={(e)=>{setEmail(e.target.value)}}
 
+            ></TEInput>
+            {/* <!-- Airline Name input --> */}
+            <TEInput
+              type="text"
+              label="Airline"
+              size="lg"
+              className="mb-6 bg-white"
+              value={Name}
+              onChange={(e)=>{setName(e.target.value)}}
+
+            ></TEInput>
+            {/* <!-- BaGuard input --> */}
+            <TEInput
+              type="number"
+              label="Number Of BaGuards"
+              size="lg"
+              className="mb-6 bg-white"
+               value={BaGuard}
+               onChange={(e)=>{setBaGuard(e.target.value)}}
             ></TEInput>
 
             {/* <!--Password input--> */}

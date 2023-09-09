@@ -16,7 +16,6 @@ import ContactAdmin from "./Dashboard/Pages/ContactAdmin";
 import SidebarAirline from "./Airline/Components/SidebarAirline";
 import ComplexNavbarAirline from "./Airline/Components/ComplexNavbarAirline";
 import MainDashboardAirline from "./Airline/Pages/MainDashboardAirline"
-import StatisticsAirline from "./Airline/Pages/StatisticsAirline"
 import Luggage from "./Airline/Pages/Luggage";
 
 import { UserContext } from "./context/userContext";

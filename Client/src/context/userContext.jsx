@@ -18,7 +18,7 @@ const UserProvider = ( {children} ) => {
                 Authorization: token,
               },
             });
-            console.log(response.data);
+            // console.log(response.data);
             setUser(response.data)
           }
         } catch (error) {

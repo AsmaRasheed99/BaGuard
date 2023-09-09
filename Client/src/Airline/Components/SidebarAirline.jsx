@@ -1,9 +1,9 @@
 import Icon from '@mdi/react';
-import {  mdiAirplane, mdiAirplanePlus, mdiBook, mdiBookAccountOutline, mdiBriefcaseEdit, mdiCarSearchOutline, mdiEmail, mdiFileEdit, mdiHandshake, mdiMapSearch, mdiMapSearchOutline, mdiNote, mdiNoteSearch, mdiNotebook, mdiNotebookHeart, mdiPlus, mdiReload, mdiSearchWeb, mdiTagSearchOutline  } from '@mdi/js';
-import { mdiShieldCrownOutline,mdiAlert } from '@mdi/js';
+import {mdiMapSearchOutline, mdiNote} from '@mdi/js';
 import React from "react";
-// import Logo from '../../Images/logo.png';
-
+import Logo from '../../Images/logo.png';
+import { UserContext } from "../../context/userContext";
+import { useContext } from "react";
 
 import {
     Card,
@@ -21,11 +21,12 @@ import { Link } from "react-router-dom";
 import Swal from 'sweetalert2'
 
   export default function SidebarAirline() {
-
+    const { user } = useContext(UserContext);
 function handleLogOut(){
 
   const ReactUrl = import.meta.env.VITE_REACT_APP_API_REACT_URL;
 
+  
 
 
   Swal.fire({
@@ -63,7 +64,7 @@ function handleLogOut(){
               id="logo"
               className="mr-4 cursor-pointer  font-bold text-2xl"
             >
-    {/* <div className='flex items-center'> <img src={Logo} className='w-12 h-14' /> <p className='pt-3 text-lg font-bold'>Airline Name</p> </div> */}
+    <div className='flex items-center'> <img src={Logo} className='w-12 h-14' /> <p className='pt-3 text-lg font-bold'>{user.Name}</p> </div>
             </Typography>
           </Link>
         </div>
@@ -98,61 +99,7 @@ function handleLogOut(){
           </ListItem>
           </Link>
 
-          {/* <Link to='/EditAboutContact'>
-          <ListItem className="hover:bg-blue-300">
-            <ListItemPrefix>
-            <Icon path={mdiFileEdit} size={1} />
-            </ListItemPrefix>
-            <a style={{color:'black'}}> Edit About </a>
-          </ListItem>
-          </Link>
-
-          <Link to='/Pending'>
-          <ListItem className="hover:bg-blue-300">
-            <ListItemPrefix>
-            <Icon path={mdiReload
-            } size={1} />
-            </ListItemPrefix>
-            <a style={{color:'black'}}> Pending Businesses </a>
-          </ListItem>
-          </Link>
-
-          <Link to='/AddCultures'>
-          <ListItem className="hover:bg-blue-300">
-            <ListItemPrefix>
-            <Icon path={mdiPlus} size={1} />
-            </ListItemPrefix>
-            <a style={{color:'black'}}> Add Cultures </a>
-          </ListItem>
-          </Link>
-
-          <Link to='/EditCultures'>
-          <ListItem className="hover:bg-blue-300">
-            <ListItemPrefix>
-            <Icon path={mdiBriefcaseEdit} size={1} />
-            </ListItemPrefix>
-            <a style={{color:'black'}}> Edit Cultures </a>
-          </ListItem>
-          </Link>
-          <Link to='/Reports'>
-          <ListItem className="hover:bg-blue-300">
-            <ListItemPrefix>
-            <Icon path={mdiAlert} size={1} />
-            </ListItemPrefix>
-            <a style={{color:'black'}}> Reports </a>
-          </ListItem>
-          </Link> */}
-
-         {/* <Link to='/ContactAdmin'>
-         <ListItem className="hover:bg-blue-300">
-            <ListItemPrefix>
-              <Icon path={mdiEmail}className="h-5 w-5" />
-            </ListItemPrefix>
-            <a style={{color:'black'}}> Inbox </a>
-         
-          </ListItem>
-          </Link> */}
-
+   
 
            <button onClick={handleLogOut}>
            <ListItem className="hover:bg-blue-300">

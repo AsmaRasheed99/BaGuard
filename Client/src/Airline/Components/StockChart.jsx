@@ -65,7 +65,7 @@ const StockChart = ({ info }) => {
     return (
         <>
                   <div className="rounded shadow-xl overflow-hidden w-full md:flex h-80 " >
-                <div className="flex w-full md:w-1/2 px-5 pb-4 pt-8 bg-indigo-500 text-white items-center">
+                <div className="flex w-full md:w-1/2 px-5 pb-4 pt-8 bg-indigo-300 text-white items-center">
                     <Line type="line" data={data} options={options} />
                 </div>
                 <div className="flex w-full md:w-1/2 p-10 bg-gray-100 text-gray-600 items-center">

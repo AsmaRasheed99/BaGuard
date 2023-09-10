@@ -36,6 +36,11 @@ const navListItems = [
     icon: ShieldCheckIcon,
     path: "",
   },
+  {
+    label: "Device Connection",
+    icon: ShieldCheckIcon,
+    path: "",
+  },
 ];
 function handleLogOut() {
   const ReactUrl = import.meta.env.VITE_REACT_APP_API_REACT_URL;

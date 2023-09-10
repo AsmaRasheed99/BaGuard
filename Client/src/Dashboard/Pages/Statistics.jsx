@@ -30,7 +30,7 @@ const Statistics = () => {
     maximumFractionDigits: 2,
   }).format(sumBaGuard);
   
-const TotalRevenue =  sumBaGuard * 15
+const TotalRevenue =  sumBaGuard * 10
 
 const formattedRevenue = new Intl.NumberFormat('en-US', {
   style: 'currency',

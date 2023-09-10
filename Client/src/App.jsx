@@ -17,6 +17,7 @@ import SidebarAirline from "./Airline/Components/SidebarAirline";
 import ComplexNavbarAirline from "./Airline/Components/ComplexNavbarAirline";
 import MainDashboardAirline from "./Airline/Pages/MainDashboardAirline"
 import Luggage from "./Airline/Pages/Luggage";
+import Device from "./Airline/Pages/Device";
 
 import { UserContext } from "./context/userContext";
 import { useContext } from "react";
@@ -77,6 +78,7 @@ function App() {
           <Routes>
             <Route index element={<MainDashboardAirline />} />
             <Route path="/Luggage" element={<Luggage/>}/>
+            <Route path="/Device" element={<Device/>}/>
      
           </Routes>
         </div>

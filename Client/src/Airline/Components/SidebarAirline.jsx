@@ -78,7 +78,14 @@ function handleLogOut(){
           </ListItem>
           </Link>
 
-
+          <Link to='/Device'>
+          <ListItem className="hover:bg-blue-300">
+            <ListItemPrefix>
+            <Icon path={mdiNote } size={1} />
+            </ListItemPrefix>
+            <a style={{color:'black'}}> Device Connection </a>
+          </ListItem>
+          </Link>
           
 
            <Link to='/Luggage'>
@@ -98,6 +105,7 @@ function handleLogOut(){
             <a style={{color:'black'}}> Reports </a>
           </ListItem>
           </Link>
+         
 
    
 
